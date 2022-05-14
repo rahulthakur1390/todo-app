@@ -20,6 +20,15 @@ Clone this repo:
 $ git clone https://github.com/rahulthakur1390/todo-app
 ```
 
+Heroku url
+```
+URL: https://rails-todo-list-rahul.herokuapp.com/
+
+user login details 
+email: testuser1@gmail.com
+password: 123456
+
+```
 Install all dependancies:
 
 ```
