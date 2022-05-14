@@ -25,7 +25,7 @@
         <% end %>
       </table>
     </ul>
-    <p><strong>Showing task <%= @tasks.size %> out of <%= current_user.tasks.size %> </strong></p>
+    <p><strong>Showing task <%= @tasks.size %> out of <%= @member.tasks.size %> </strong></p>
     <%= will_paginate @tasks %>
   </div>
 </div>
