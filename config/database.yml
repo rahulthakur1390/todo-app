@@ -24,4 +24,8 @@ test:
 
 production:
   <<: *default
-  database: todo_list_production1
+  url: <%= ENV["DATABASE_URL"] %>
+  username: dqcxbtoaneyqua
+  password: f5ac86098b98051e1679afc2b8827d864128da6854ae5adcfa180aaedc1873cb
+  pool: 15
+  database: dcu8grtik8ib50
