@@ -1,0 +1,10 @@
+<h1 class="custom-header">
+  To-do APP
+</h1>
+<p class="container"><%= notice %></p>
+
+<%= link_to 'Home', root_path, class: ['action-button', 'log-out-button'] %>
+
+<%= link_to 'Go back', members_path, class: ['action-button', 'back-button'] %>
+
+<%= link_to 'Log out', destroy_user_session_path, method: :delete, class: ['action-button', 'log-out-button'] %>

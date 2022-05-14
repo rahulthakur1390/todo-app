@@ -1,0 +1,297 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require font-awesome
+ *= require_tree .
+ *= require_self
+*/
+
+body {
+  background-color: #fff;
+  color: #333;
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.container {
+  margin: 40px auto;
+  max-width: 60%;
+  text-align: center;
+}
+
+.main-header,
+.header {
+  background-color: #000;
+  color: #fff;
+  margin: 0;
+  padding: 25px;
+}
+
+.main-header {
+  font-size: 3em;
+}
+
+.main-status {
+  font-size: 2em;
+}
+
+.main-completed {
+  margin-top: 50px;
+}
+
+.main-list {
+  margin: 0 auto;
+  padding: 0;
+}
+
+.main-item {
+  border: thin solid #d3d3d3;
+  display: grid;
+  font-size: 1.5em;
+  grid-template-columns: [col] 40% [col] 20% [col] 20% [col] 20%;
+  margin-top: 10px;
+  padding: 15px;
+  text-align: left;
+}
+
+.main-name {
+  color: inherit;
+  grid-column: col 1;
+  text-decoration: none;
+}
+
+.main-name:hover {
+  color: #76ac26;
+}
+
+.main-time {
+  color: #d3d3d3;
+}
+
+.main-time.is-due {
+  color: #cc0000;
+}
+
+.main-buttons {
+  margin-top: 0px;
+}
+
+.main-buttons {
+  grid-column: col 4;
+  text-align: right;
+}
+
+.main-button,
+.main-button:visited {
+  color: #76ac26;
+  margin-left: 15px;
+}
+
+.main-button:hover {
+  color: #000;
+}
+
+/* Form */
+
+.form-container {
+  margin: 100px auto;
+  max-width: 600px;
+  text-align: center;
+}
+
+.form-sessions {
+  max-width: 600px;
+}
+
+.form-field {
+  display: grid;
+  font-size: 1.5em;
+  grid-template-columns: [col] 30% [col] 70%;
+  margin-top: 20px;
+}
+
+.form-label-container {
+  align-self: center;
+  grid-column: col 1;
+  margin-right: 15px;
+  text-align: left;
+}
+
+.form-input-container {
+  align-self: center;
+  grid-column: col 2;
+}
+
+.form-checkbox {
+  margin-right: 10px;
+  text-align: right;
+}
+
+.form-label {
+  font-size: inherit;
+}
+
+.form-input {
+  background-color: #fff;
+  border: thin solid #76ac26;
+  display: block;
+  font-size: inherit;
+  text-align: left;
+  padding: 15px;
+  width: 94%;
+}
+
+.form-input-container em {
+  font-size: 0.6em;
+}
+
+.form-buttons {
+  margin-top: 40px;
+}
+
+.form-links-sessions {
+  margin-top: 30px;
+}
+
+.form-links-sessions a {
+  color: #76ac26;
+  grid-column: col 1;
+  text-decoration: none;
+}
+
+.form-links-sessions a:hover {
+  color: inherit;
+  text-decoration: underline;
+}
+
+/* Generic buttons */
+
+.back-button {
+  float: right;
+  position: absolute;
+  top: 25px;
+  right: 125px;
+}
+
+.action-button {
+  background-color: #76ac26;
+  border: thin solid transparent;
+  color: #fff;
+  font-size: inherit;
+  text-decoration: none;
+  padding: 10px 25px;
+}
+
+.action-button:hover {
+  background-color: #fff;
+  border-color: #76ac26;
+  color: #76ac26;
+}
+
+.user-session-buttons {
+  display: grid;
+  float: right;
+  font-size: 1em;
+  grid-template-columns: [col] 60% [col] 60%;
+  grid-gap: 10px;
+  position: absolute;
+  text-align: center;
+  top: 25px;
+  right: 65px;
+}
+
+.sign-up-button {
+  grid-column: col 1;
+  padding: 10px;
+}
+
+.log-in-button {
+  grid-column: col 2;
+  padding: 10px;
+}
+
+.log-out-button {
+  cursor: pointer;
+  float: right;
+  padding: 10px 15px;
+  position: absolute;
+  top: 25px;
+  right: 25px;
+}
+
+
+button,
+input,
+textarea {
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.notice-container:not(:empty) {
+  background-color: #76ac26;
+  color: #fff;
+  margin: 0;
+  padding: 15px 25px;
+}
+
+.errors-container {
+  background-color: #cc0000;
+  color: #fff;
+  margin: 0;
+  padding: 15px 25px;
+}
+
+.margin-button {
+  margin-top: 28px;
+  margin-bottom: 28px;
+}
+
+.custom-header {
+  margin: 23px;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+select.form-input {
+  width: 102%;
+}
+
+.task_incomplete {
+  background: brown;
+}
+
+.task_complete {
+  background: green;
+}
+
+.badge {
+  color: aliceblue;
+  padding: 5px;
+  border-radius: 18px;
+}

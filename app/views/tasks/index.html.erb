@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="main-todo">
+    <h2 class="main-status">
+      All tasks
+    </h2>
+
+    <ul class="main-list">
+      <div class="main-buttons margin-button">
+        <%= link_to 'Add Task', new_task_path, class: "action-button" %>
+      </div>
+      <table>
+        <tr>
+          <th>Task</th>
+          <th>Status</th>
+          <th>Family Member</th>
+          <th>Due Date</th>
+          <th>Action</th>
+        </tr>
+        <% @tasks.each do |task| %>
+          <tr>
+            <td><%= task.task %></td>
+            <td><span id="task-<%= task.id %>" class="badge <%= task.completed ? 'task_complete' : 'task_incomplete'%>"><%= task.task_status %></span></td>
+            <td><%= task.assigned_to %></td>
+            <td><%= task.due_date.strftime("%D") %></td>
+            <td><%= link_to task.completed ? "Mark as Incompleted" : "Mark as Complete", mark_as_complete_task_path(task), remote: true, id: "link-#{task.id}" %></td>
+          </tr>
+        <% end %>    
+      </table>    
+    </ul>
+    <p><strong>Showing task <%= @tasks.size %> out of <%= current_user.tasks.size %> </strong></p>
+    <%= will_paginate @tasks %>
+  </div>
+</div>

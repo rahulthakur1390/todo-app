@@ -1,0 +1,27 @@
+
+<%= form_with(model: member, local: true) do |form| %>
+  <% if member.errors.any? %>
+    <div class="errors-container">
+      <h2>
+        <%= pluralize(member.errors.count, "error") %> prohibited this member from being saved:
+      </h2>
+
+      <ul class="errors-list">
+        <% member.errors.full_messages.each do |message| %>
+          <li class="errors-item">
+            <%= message %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="form-container">
+    <%= form.text_field :name, class: 'form-input', disabled: readonly %>
+
+  <% unless readonly %>
+    <div class="main-buttons margin-button">
+      <%= form.submit class: 'action-button' %>
+    </div>
+  <% end %>
+  </div>
+<% end %>

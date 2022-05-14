@@ -1,0 +1,29 @@
+<div class="container">
+
+  <div class="main-todo">
+    <h2 class="main-status">
+      Family Member Dashboard 
+    </h2>
+
+    <ul class="main-list">
+      <div class="main-buttons margin-button">
+        <%= link_to 'Add Family Member', new_member_path, class: "action-button" %>
+      </div>
+      <% @members.each do |member| %>
+        <% if member.user == current_user %>
+          <li class="main-item">
+            <%= render 'member', member: member %>
+            <%= member.tasks.length %> tasks
+            <%= link_to "( View Tasks )", member_tasks_member_path(member), class: 'main-button'%>
+            <div class="main-buttons">
+              <%= link_to fa_icon("pencil"), edit_member_path(member), class: 'main-button' %>
+              <%= link_to fa_icon("trash-o"), member, class: 'main-button',
+                          method: :delete, data: { confirm: 'Are you sure?' } %>
+            </div>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
+    <%= link_to 'All Tasks', tasks_path, style: "font-size: 25px;" %>
+  </div>
+</div>

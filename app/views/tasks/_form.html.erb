@@ -1,0 +1,61 @@
+<%= form_with(model: task, url: [member, task], local: true) do |form| %>
+  <% if task.errors.any? %>
+    <div class="errors-container">
+      <h2>
+        <%= pluralize(task.errors.count, "error") %> prohibited this task from being saved:
+      </h2>
+
+      <ul class="errors-list">
+        <% task.errors.full_messages.each do |message| %>
+          <li class="errors-item">
+            <%= message %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-container">
+    <div class="form-field">
+      <div class="form-label-container">
+        <%= form.label :task, class: 'form-label' %>
+      </div>
+      <div class="form-input-container">
+        <%= form.text_field :task, id: :task_task, class: 'form-input', disabled: readonly %>
+      </div>
+    </div>
+
+    <div class="field form-field">
+      <div class="form-label-container">
+        <%= form.label :details, class: 'form-label' %>
+      </div>
+      <div class="form-input-container">
+        <%= form.text_area :details, id: :task_details, class: 'form-input', disabled: readonly %>
+      </div>
+    </div>
+
+    <div class="form-field">
+      <div class="form-label-container">
+        <%= form.label :due_date, class: 'form-label' %>
+      </div>
+      <div class="form-input-container">
+        <%= form.date_field :due_date, id: :task_due_date, class: 'form-input', disabled: readonly %>
+      </div>
+    </div>
+
+    <div class="field form-field">
+      <div class="form-label-container">
+        <%= form.label :member, class: 'form-label' %>
+      </div>
+      <div class="form-input-container">
+        <%= form.select :member_id, options_for_select(current_user.members.map{|e| [e.name, e.id]}), {}, prompt: 'Select Member', class: 'form-input' %>
+      </div>
+    </div>
+
+    <% unless readonly %>
+      <div class="main-buttons margin-button">
+        <%= form.submit class: 'action-button' %>
+      </div>
+    <% end %>
+  </div>
+<% end %>

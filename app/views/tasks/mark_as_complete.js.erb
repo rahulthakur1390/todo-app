@@ -1,0 +1,10 @@
+$("#task-<%= @task.id %>").html("<%= @task.task_status %>")
+<% if @task.completed %>
+    $("#task-<%= @task.id %>").removeClass("task_incomplete")
+    $("#task-<%= @task.id %>").addClass("task_complete")
+    $("#link-<%= @task.id %>").text("Mark as Incomplete")
+<% else %>
+    $("#task-<%= @task.id %>").addClass("task_incomplete")
+    $("#task-<%= @task.id %>").removeClass("task_complete")
+    $("#link-<%= @task.id %>").text("Mark as Complete")
+<% end %>
